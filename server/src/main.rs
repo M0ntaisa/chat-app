@@ -18,7 +18,7 @@ fn main() {
     let (tx, rx) = mpsc::channel::<String>();
     loop {
         if let Ok((mut socket, addr)) = server.accept() {
-            println!("Client {} connected", addr);
+            println!("Client {} is connected", addr);
 
             let tx = tx.clone();
             clients.push(socket.try_clone().expect("Failed to clone client"));
